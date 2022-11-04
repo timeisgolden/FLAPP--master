@@ -8,15 +8,11 @@ import { IonButton } from '@ionic/angular';
   styleUrls: ['./homepage.page.scss'],
 })
 export class HomepagePage implements OnInit {
+  constructor(private router: Router) {}
 
-  constructor(private router: Router) { }
+  ngOnInit() {}
 
-  ngOnInit() {
-    
+  VisualizzaLavori() {
+    this.router.navigate(['visualizza-lavoti']);
   }
-
-  VisualizzaLavori(){
-    this.router.navigate(["visualizza-lavoti"]);
-  }
-
 }

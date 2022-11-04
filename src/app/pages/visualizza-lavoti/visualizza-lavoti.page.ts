@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FirebaseApp } from '@angular/fire/app';
 import { Router } from '@angular/router';
-import { Database } from '@angular/fire/database';
-import { getApp } from 'firebase/app';
-import { collection, doc, Firestore, getDocs, getFirestore, onSnapshot, query, where } from 'firebase/firestore';
-import { map } from 'rxjs/operators';
-
+import { takeUntil } from 'rxjs/operators';
+import { LavoriService } from 'src/app/services/lavori.service';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-visualizza-lavoti',
@@ -13,30 +10,25 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./visualizza-lavoti.page.scss'],
 })
 export class VisualizzaLavotiPage implements OnInit {
+  lavories: any;
+  private _unsubscribeAll: Subject<any> = new Subject();
 
-  constructor(private router: Router, db: Database) {}
-
-
-
-  getAll(){
-    const firebaseApp = getApp();
-    const db = getFirestore(firebaseApp);
-    const lookCategorysCollectionRef = collection(db, 'Lavori')
-    onSnapshot(lookCategorysCollectionRef,snapshotChanges => {
-      const lookCategories = map(snapshotChanges.docs, (doc) => { return new AccessoryItemModel(doc.id, doc.data()); });
-      onLookCategorysChanged.next(sortBy(lookCategories, (item) => item.name));
-    }, (error) => this.onLookCategorysChanged.next([]));
-    
+  constructor(private router: Router, private lavoriService: LavoriService) {
+    this.lavoriService.onLavoriesChanged
+      // eslint-disable-next-line no-underscore-dangle
+      .pipe(takeUntil(this._unsubscribeAll))
+      .subscribe((lavories) => {
+        this.lavories = lavories;
+        console.log('Debug lavories:', this.lavories);
+      });
   }
-  
 
   ngOnInit() {
+    this.lavoriService.getLavories();
+    console.log('Debug lavories:', this.lavories);
   }
 
-  AggiungiLavori(){
-    this.router.navigate(["agguingi-lavoro"]);
-
+  aggiungiLavori() {
+    this.router.navigate(['agguingi-lavoro']);
   }
-
-
 }

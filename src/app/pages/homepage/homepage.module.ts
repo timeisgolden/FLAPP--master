@@ -9,12 +9,7 @@ import { HomepagePageRoutingModule } from './homepage-routing.module';
 import { HomepagePage } from './homepage.page';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    HomepagePageRoutingModule
-  ],
-  declarations: [HomepagePage ]
+  imports: [CommonModule, FormsModule, IonicModule, HomepagePageRoutingModule],
+  declarations: [HomepagePage],
 })
 export class HomepagePageModule {}

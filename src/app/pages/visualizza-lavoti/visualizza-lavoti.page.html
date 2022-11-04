@@ -2,83 +2,33 @@
   <ion-toolbar color="secondary">
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
-      </ion-buttons>
+    </ion-buttons>
     <ion-title>Lavori</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-card>
-  <ion-card-content>
-    <ion-list lines="none">
-      <ion-label>
-        Mugello-ferrari
-        <p>17/10/2022</p>
-      </ion-label>
-    </ion-list>
-    <ion-item lines="none">
-      <ion-label>
-        <p>Azienda: NVP</p>
-        <p>Compenso: 200</p>
-        <p>Giorni di lavoro: 3</p>
-      </ion-label>
-    </ion-item>
-  </ion-card-content>
-</ion-card>
-<ion-card>
-  <ion-card-content>
-    <ion-list lines="none">
-      <ion-label>
-        Inter-Barcellona
-        <p>12/10/2022</p>
-      </ion-label>
-    </ion-list>
-    <ion-item lines="none">
-      <ion-label>
-        <p>Azienda: NVP</p>
-        <p>Compenso: 150</p>
-        <p>Camera:4</p>
-      </ion-label>
-    </ion-item>
-  </ion-card-content>
-</ion-card>
-<ion-card>
-  <ion-card-content>
-    <ion-list lines="none">
-      <ion-label>
-        Juventus-lazio
-        <p>10/10/2022</p>
-      </ion-label>
-    </ion-list>
-    <ion-item lines="none">
-      <ion-label>
-        <p>Azienda: NVP</p>
-        <p>Compenso: 100</p>
-        <p>camera:10</p>
-      </ion-label>
-    </ion-item>
-  </ion-card-content>
-</ion-card>
-<ion-card>
-  <ion-card-content>
-    <ion-list lines="none">
-      <ion-label>
-        Sassari-Eurolega
-        <p>21/09/2022</p>
-      </ion-label>
-    </ion-list>
-    <ion-item lines="none">
-      <ion-label>
-        <p>Azienda: Opera</p>
-        <p>Compenso: 40</p>
-        <p>Camera:5</p>
-      </ion-label>
-    </ion-item>
-  </ion-card-content>
-</ion-card>
-<ion-fab vertical="bottom" horizontal="end" slot="fixed">
-  <ion-fab-button color="primary" (click)="AggiungiLavori()">
-    <ion-icon name="add"></ion-icon>
-  </ion-fab-button>
-</ion-fab>
+
+  <ion-card *ngFor="let lavori of lavories">
+    <ion-card-header>
+      <ion-card-subtitle>{{lavori.id}}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item lines="none">
+        <ion-label>
+          <p>Camera: {{lavori.Camera}}</p>
+          <p>Classe: {{lavori.Classe}}</p>
+          <p>Azienda: {{lavori.Azienda}}</p>
+          <p>Note: {{lavori.Note}}</p>
+          <p>Produzione: {{lavori.Produzione}}</p>
+          <p>Regista: {{lavori.Regista}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="primary" (click)="aggiungiLavori()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
 </ion-content>

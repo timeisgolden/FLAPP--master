@@ -13,8 +13,8 @@ import { VisualizzaLavoriSpecificoPage } from './visualizza-lavori-specifico.pag
     CommonModule,
     FormsModule,
     IonicModule,
-    VisualizzaLavoriSpecificoPageRoutingModule
+    VisualizzaLavoriSpecificoPageRoutingModule,
   ],
-  declarations: [VisualizzaLavoriSpecificoPage]
+  declarations: [VisualizzaLavoriSpecificoPage],
 })
 export class VisualizzaLavoriSpecificoPageModule {}
