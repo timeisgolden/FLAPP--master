@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registrazione</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="registerForm.getForm()">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title color="primary">Immetti qui i tuoi dati</ion-card-title>
+    </ion-card-header>
+    
+    <ion-card-content>
+   <ion-item>
+      <ion-label position="floating">email</ion-label>
+      <ion-input type="email" placeholder="email@domain.com" formControlName="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">password</ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
+    </ion-item>
+      <ion-item>
+      <ion-label position="floating">conferma password</ion-label>
+      <ion-input type="password" formControlName="confermapassword"></ion-input>
+    </ion-item>
+    </ion-card-content>
+  </ion-card>
+</form>
+  <ion-button expand="full" color="light"  (click)="Registration()">Registrati</ion-button>
+
+</ion-content>

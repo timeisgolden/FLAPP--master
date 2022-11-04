@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+      </ion-buttons>
+    <ion-title>aggiungi-lavoro</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form [formGroup]="lavoroForm.getForm()">
+  <ion-card>
+  <ion-card-content>
+    <ion-item>
+      <ion-label position="floating">produzione</ion-label>
+    <ion-input formControlName="Produzione"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">camera</ion-label>
+    <ion-input formControlName="Camera"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">azienda</ion-label>
+    <ion-input formControlName="Azienda"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">regista</ion-label>
+    <ion-input formControlName="Regista"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">classe</ion-label>
+    <ion-input formControlName="Classe"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Note</ion-label>
+    <ion-input formControlName="Note"></ion-input>
+  </ion-item>
+  </ion-card-content>
+</ion-card>
+<ion-button color="secondary" size="full" (click)="Work()">Aggiungi</ion-button>
+</form>
+</ion-content>

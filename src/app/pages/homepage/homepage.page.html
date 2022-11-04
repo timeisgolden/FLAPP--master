@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+    <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Fl-app</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-list color="primary">
+  <ion-item color="secondary">
+    <ion-avatar slot="start">
+      <img src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+    </ion-avatar>
+    <ion-label>
+      <h1>Diego Milito</h1>
+      <p> occupazione:<span class="lavoro">Cameraman</span></p>
+    </ion-label>
+  </ion-item>
+</ion-list>
+<ion-card>
+  <ion-card-header>
+    <ion-card-subtitle>Lavori</ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list lines="none">
+      <ion-label>
+        Ultimo lavoro
+        <p>Mugello - ferrari</p>
+      </ion-label>
+    </ion-list>
+    <ion-item lines="none">
+      <ion-label>
+        <p>data: 17/10/2022</p>
+        <p>Azienda: NVP</p>
+      </ion-label>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-button color="primary" size="full" fill="clear" (click)="VisualizzaLavori()">Guarda gli altri lavori...</ion-button>
+    </ion-item>
+  </ion-card-content>
+</ion-card>
+
+</ion-content>
